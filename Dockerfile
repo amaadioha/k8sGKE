@@ -9,7 +9,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 # Use the offical Golang image to create a build artifact.
 # This is based on Debian and sets the GOPATH to /go.
 # https://hub.docker.com/_/golang
@@ -38,3 +37,5 @@ COPY --from=builder /quickstart-go /quickstart-go
 # Run the web service on container startup.
 USER nonroot:nonroot
 ENTRYPOINT ["/quickstart-go"]
+
+# Change the working directory.
